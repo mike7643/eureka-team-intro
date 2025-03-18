@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="joinus.css" />
+    <title>Join Us</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- 상단 제목 -->
+      <h3>2조와 함께 해주세요!</h3>
+      <!-- 두 영역을 나누는 flex 박스 -->
+      <div class="main-content">
+        <!-- 왼쪽: 조원 목록 -->
+        <div class="left-section">
+          <table>
+            <tr>
+              <th>조원 목록</th>
+              <th>역할</th>
+            </tr>
+            <tr>
+              <td>정유민</td>
+              <td>조장</td>
+            </tr>
+            <tr>
+              <td>변지민</td>
+              <td>조원</td>
+            </tr>
+            <tr>
+              <td>장승범</td>
+              <td>조원</td>
+            </tr>
+            <tr>
+              <td>천다인</td>
+              <td>조원</td>
+            </tr>
+            <tr>
+              <td>허승현</td>
+              <td>조원</td>
+            </tr>
+            <tr>
+              <td>정현경</td>
+              <td>조원</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- 오른쪽: 가입 폼 -->
+        <div class="right-section">
+          <form id="registerForm" action="">
+            <input id="domain" type="hidden" value="abc" />
+            <label for="userId">아이디</label><br />
+            <input id="userId" type="text" /><br />
+            <label for="password">패스워드</label><br />
+            <input id="password" type="password" /><br />
+            <label for="userName">이름</label><br />
+            <input id="userName" type="text" /><br />
+            <label for="phone">전화번호</label><br />
+            <input id="phone" type="text" placeholder="010-0000-0000" /><br />
+            <label>성별</label><br />
+            <div class="radio-group">
+              <input id="male" type="radio" name="gender" value="M" /><label
+                for="male"
+                >남</label
+              >
+              <input id="female" type="radio" name="gender" value="F" checked /><label
+                for="female"
+                >여</label
+              >
+            </div><br />
+            <label>취미</label><br />
+            <div class="checkbox-group">
+              <input id="movie" type="checkbox" name="hobby" value="movie" />
+              <label for="movie">영화</label>
+              <input id="sport" type="checkbox" name="hobby" value="sport" checked />
+              <label for="sport">운동</label>
+              <input id="music" type="checkbox" name="hobby" value="mung" />
+              <label for="music">음악</label>
+              <input id="game" type="checkbox" name="hobby" value="mung" />
+              <label for="game">게임</label>
+              <input id="walk" type="checkbox" name="hobby" value="mung" />
+              <label for="walk">산책</label>
+            </div><br />
+            <label for="major">전공</label>
+            <select name="major" id="major">
+              <option value="CS">Computer Science</option>
+              <option value="AI" selected>AI</option>
+              <option id="DS" value="DS">Design</option>
+              <option id="ET" value="ET">ETCs</option>
+            </select><br />
+            <label for="desc">하고싶은 말</label><br />
+            <textarea name="desc" id="desc" cols="30" rows="5">
+이러한 사연이 있어서 2조에 들어가고 싶습니다.
+            </textarea>
+          </form>
+          <br />
+          <input id="btnRegister" type="button" value="가입하기" />
+        </div>
+      </div>
+    </div>
+    <script>
+      // 이미 문서의 마지막에 script를 넣고 있지만, 조금 더 안전한 (dom 문서의 처리가 완료된 후 실행) 방법
+      // callback 함수
+      window.onload = function () {
+        document
+          .getElementById("phone")
+          .addEventListener("input", function (event) {
+            let value = event.target.value.replace(/[^0-9]/g, ""); // 숫자만 남기기
+            if (value.length > 3 && value.length <= 7) {
+              value = value.replace(/(\d{3})(\d{1,4})/, "$1-$2");
+            } else if (value.length > 7) {
+              value = value.replace(/(\d{3})(\d{4})(\d{1,4})/, "$1-$2-$3");
+            }
+            event.target.value = value;
+          });
+        // register
+        document.querySelector("#btnRegister").onclick = function () {
+          console.log(document.querySelector("#userId").value);
+          console.log(document.querySelector("#password").value);
+          console.log(document.querySelector("#userName").value);
+          console.log(document.querySelector("#phone").value);
+
+          let userName = document.querySelector("#userName").value.trim();
+          let phone = document.querySelector("#phone").value.trim();
+
+          if (!userName || !phone) {
+            alert("이름과 전화번호를 입력해주세요!");
+            return;
+          }
+
+          // 조원 목록 추가 기능
+          let table = document.querySelector("table");
+          let newRow = table.insertRow(-1); // 마지막에 추가
+          let nameCell = newRow.insertCell(0);
+          let roleCell = newRow.insertCell(1);
+
+          nameCell.textContent = userName;
+          roleCell.textContent = "조원"; // 기본 역할
+
+          document.querySelector("#userName").value = "";
+          document.querySelector("#phone").value = "";
+
+          // radio
+          console.log(
+            document.querySelector("input[name='gender']:checked").value
+          );
+
+          // checkbox (0 ~ 여러개)
+          document
+            .querySelectorAll("input[name='hobby']:checked")
+            .forEach((el) => console.log(el.value));
+
+          // select
+          console.log(document.querySelector("#major option:checked").value);
+
+          // textarea
+          console.log(document.querySelector("#desc").value);
+        };
+      };
+    </script>
+  </body>
+</html>
