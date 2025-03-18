@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: wheat;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color:gray;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            margin-top: 50px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        #profile {
+            width: 400px;
+            height: 300px;
+            border-radius: 10px;
+            border: 5px solid lightgray;
+        }
+
+        p {
+            font-size: 20px;
+            color:midnightblue;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="main.html">메인</a>
+        <a href="history.html">경력</a>
+        <a href="favorites.html">공유하고 싶은 것</a>
+    </nav>
+
+    <div class="container">
+        <img src="images/welshcorgi.jpg" alt="웰시 코기" id="profile">
+        <p><strong>이름 :</strong> 장승범</p>
+        <p><strong>생년월일 :</strong> 1998/07/26</p>
+        <p><strong>MBTI :</strong> ISTP</p>
+        <p><strong>거주지 :</strong> 경기도 의정부시</p>
+        <p><strong>Github :</strong> <a href="https://github.com/JSeungBeom" target="_blank">
+            <img src="images/git.png" width = 30px height = 30px>
+        </a></p>
+    </div>
+
+</body>
+</html>
