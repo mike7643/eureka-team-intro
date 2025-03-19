@@ -12,30 +12,96 @@
 
 <body>
   <div class="container mt-4">
-    <h3 class="title">2조와 함께 해주세요 !</h3>
+    <h3 class="title">2조 가입 신청서</h3>
 
     <div class="row mt-4">
       <!-- 왼쪽: 조원 목록 -->
       <div class="col-md-6">
-        <div class="card shadow p-3">
-          <h5 class="card-title text-center fw-bold">조원 목록</h5>
-          <table class="table table-striped table-hover">
-            <thead class="table-dark">
-              <tr>
-                <th>이름</th>
-                <th>역할</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>정유민</td><td>조장</td></tr>
-              <tr><td>변지민</td><td>조원</td></tr>
-              <tr><td>장승범</td><td>조원</td></tr>
-              <tr><td>천다인</td><td>조원</td></tr>
-              <tr><td>허승현</td><td>조원</td></tr>
-              <tr><td>정현경</td><td>조원</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <style>
+          .team-table {
+            border-collapse: collapse;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 500px;
+          }
+
+          .team-table th {
+            background-color: #4e73df;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+          }
+
+          .team-table td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+          }
+
+          .team-table tr:last-child td {
+            border-bottom: none;
+          }
+
+
+
+          .team-table tr:hover {
+            background-color: #c8ced1;
+          }
+
+          .badge-leader {
+            background-color: #4e73df;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+          }
+
+          .badge-member {
+            background-color: #6c757d;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+          }
+        </style>
+
+        <table class="team-table">
+          <thead>
+            <tr>
+              <th>조원 목록</th>
+              <th>역할</th>
+            </tr>
+          </thead>
+          <tbody id="teamMembers">
+            <tr>
+              <td>정유민</td>
+              <td><span class="badge-leader">조장</span></td>
+            </tr>
+            <tr>
+              <td>변지민</td>
+              <td><span class="badge-member">조원</span></td>
+            </tr>
+            <tr>
+              <td>장승범</td>
+              <td><span class="badge-member">조원</span></td>
+            </tr>
+            <tr>
+              <td>천다인</td>
+              <td><span class="badge-member">조원</span></td>
+            </tr>
+            <tr>
+              <td>허승현</td>
+              <td><span class="badge-member">조원</span></td>
+            </tr>
+            <tr>
+              <td>정현경</td>
+              <td><span class="badge-member">조원</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <!-- 오른쪽: 가입 폼 -->
@@ -45,7 +111,7 @@
           <form id="registerForm">
             <div class="mb-3">
               <label for="userName" class="form-label">이름</label>
-              <input type="text" class="form-control" id="userName" placeholder="gildong Hong">
+              <input type="text" class="form-control" id="userName" placeholder="이길동">
             </div>
             <div class="mb-3">
               <label for="phone" class="form-label">전화번호</label>
@@ -100,18 +166,26 @@
       document.getElementById("btnRegister").addEventListener("click", function () {
         let userName = document.getElementById("userName").value.trim();
         let phone = document.getElementById("phone").value.trim();
+
         if (!userName || !phone) {
           alert("이름과 전화번호를 입력해주세요!");
           return;
         }
 
-        let table = document.querySelector(".table tbody");
-        let newRow = table.insertRow();
-        newRow.innerHTML = `<td>${userName}</td><td>조원</td>`;
+        let teamMembersTable = document.getElementById("teamMembers");
+
+        let newRow = teamMembersTable.insertRow();
+        newRow.innerHTML = `
+          <td>${userName}</td>
+          <td><span class="badge-member">조원</span></td>
+        `;
 
         document.getElementById("registerForm").reset();
       });
     });
   </script>
+      <script src="../gototeam.js"></script>
+
 </body>
+
 </html>
