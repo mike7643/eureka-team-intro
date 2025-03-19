@@ -4,7 +4,7 @@
     button.className = 'team-button';
     button.textContent = '2조 Home';
     button.onclick = function() {
-      window.location.href = '/eureka-team-intro/index.html';
+      window.location.href = '../index.html';
     };
     
     button.style.position = 'fixed';
