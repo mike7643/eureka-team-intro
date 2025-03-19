@@ -1,137 +1,68 @@
 /* 기본 스타일 */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f8f9fa;
+  font-family: 'Arial', sans-serif;
 }
 
-/* 전체 컨테이너 */
 .container {
-  max-width: 1200px;
+  max-width: 1400px; /* 기존 1200px에서 늘림 */
   margin: 20px auto;
   padding: 0 20px;
 }
 
-/* 상단 텍스트 스타일 */
 h3 {
-  text-align: left;
+  color: #212529;
+}
+
+/* 상단 텍스트 스타일 */
+.title {
+  background-color: black; /* 배경을 검은색으로 */
+  color: white; /* 글자색을 흰색으로 */
+  padding: 15px; /* 텍스트 주변에 여백 추가 */
+  text-align: center; /* 텍스트를 중앙 정렬 */
+  border-radius: 10px; /* 테두리 둥글게 처리 */
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 24px; /* 텍스트 크기 설정 */
 }
 
-/* 두 영역을 나누기 위한 flex */
-.main-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  margin-top: 20px;
-}
 
-/* 왼쪽 - 조원 목록 */
-.left-section {
-  flex: 1;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  padding: 12px 20px;
-  text-align: left;
-  border: 1px solid #ddd;
-}
-
-th {
-  background-color: black;
-  color: white;
-  font-weight: bold;
-}
-
-td {
-  background-color: #f9f9f9;
-}
-
-tr:nth-child(even) td {
-  background-color: #f2f2f2;
-}
-
-tr:hover td {
-  background-color: #f1f1f1;
-}
-
-/* 오른쪽 - 회원가입 폼 */
-.right-section {
-  flex: 1;
-  background-color: #ffffff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  height: auto;
-}
-
-#registerForm {
-  display: flex;
-  flex-direction: column;
-  gap: 0px; /* 각 폼 요소들 사이의 간격을 줄임 */
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-label {
-  margin-bottom: 0px; /* label과 입력창 간의 간격을 더 줄임 */
-  font-weight: bold;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="radio"],
-input[type="checkbox"],
-select,
-textarea {
-  margin-bottom: 1px; /* 입력창과 다른 요소 사이의 간격을 더 줄임 */
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  width: 100%;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-  width: auto;
-}
-
-textarea {
-  resize: vertical;
-  height: 100px;
-}
-
-#btnRegister {
-  background-color: black;
-  color: white;
-  padding: 10px 15px;
+/* 카드 스타일 */
+.card {
+  border-radius: 12px;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
+}
+
+.card-title {
+  margin-bottom: 15px;
+}
+
+/* 테이블 스타일 */
+.table th {
+  text-align: center;
+}
+
+.table td {
+  text-align: center;
+}
+
+/* 버튼 스타일 */
+.btn-dark {
   font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 8px;
 }
 
-/* 라디오 버튼과 체크박스 가로로 정렬 */
-.radio-group,
-.checkbox-group {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 5px; /* 항목 간의 간격을 줄임 */
+.btn-dark:hover {
+  background-color: #343a40;
 }
 
-.radio-group input,
-.checkbox-group input {
-  width: auto;
+/* 폼 입력 필드 스타일 */
+.form-control {
+  border-radius: 8px;
+  padding: 10px;
 }
 
-.checkbox-group label {
-  margin-left: 5px;
+textarea {
+  resize: none;
 }

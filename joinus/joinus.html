@@ -1,164 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="joinus.css" />
-    <title>Join Us</title>
-  </head>
-  <body>
-    <div class="container">
-      <!-- 상단 제목 -->
-      <h3>2조와 함께 해주세요!</h3>
-      <!-- 두 영역을 나누는 flex 박스 -->
-      <div class="main-content">
-        <!-- 왼쪽: 조원 목록 -->
-        <div class="left-section">
-          <table>
-            <tr>
-              <th>조원 목록</th>
-              <th>역할</th>
-            </tr>
-            <tr>
-              <td>정유민</td>
-              <td>조장</td>
-            </tr>
-            <tr>
-              <td>변지민</td>
-              <td>조원</td>
-            </tr>
-            <tr>
-              <td>장승범</td>
-              <td>조원</td>
-            </tr>
-            <tr>
-              <td>천다인</td>
-              <td>조원</td>
-            </tr>
-            <tr>
-              <td>허승현</td>
-              <td>조원</td>
-            </tr>
-            <tr>
-              <td>정현경</td>
-              <td>조원</td>
-            </tr>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="joinus.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Join Us</title>
+</head>
+
+<body>
+  <div class="container mt-4">
+    <h3 class="title">2조와 함께 해주세요 !</h3>
+
+    <div class="row mt-4">
+      <!-- 왼쪽: 조원 목록 -->
+      <div class="col-md-6">
+        <div class="card shadow p-3">
+          <h5 class="card-title text-center fw-bold">조원 목록</h5>
+          <table class="table table-striped table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th>이름</th>
+                <th>역할</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>정유민</td><td>조장</td></tr>
+              <tr><td>변지민</td><td>조원</td></tr>
+              <tr><td>장승범</td><td>조원</td></tr>
+              <tr><td>천다인</td><td>조원</td></tr>
+              <tr><td>허승현</td><td>조원</td></tr>
+              <tr><td>정현경</td><td>조원</td></tr>
+            </tbody>
           </table>
         </div>
+      </div>
 
-        <!-- 오른쪽: 가입 폼 -->
-        <div class="right-section">
-          <form id="registerForm" action="">
-            <input id="domain" type="hidden" value="abc" />
-            <label for="userId">아이디</label><br />
-            <input id="userId" type="text" /><br />
-            <label for="password">패스워드</label><br />
-            <input id="password" type="password" /><br />
-            <label for="userName">이름</label><br />
-            <input id="userName" type="text" /><br />
-            <label for="phone">전화번호</label><br />
-            <input id="phone" type="text" placeholder="010-0000-0000" /><br />
-            <label>성별</label><br />
-            <div class="radio-group">
-              <input id="male" type="radio" name="gender" value="M" /><label
-                for="male"
-                >남</label
-              >
-              <input id="female" type="radio" name="gender" value="F" checked /><label
-                for="female"
-                >여</label
-              >
-            </div><br />
-            <label>취미</label><br />
-            <div class="checkbox-group">
-              <input id="movie" type="checkbox" name="hobby" value="movie" />
-              <label for="movie">영화</label>
-              <input id="sport" type="checkbox" name="hobby" value="sport" checked />
-              <label for="sport">운동</label>
-              <input id="music" type="checkbox" name="hobby" value="mung" />
-              <label for="music">음악</label>
-              <input id="game" type="checkbox" name="hobby" value="mung" />
-              <label for="game">게임</label>
-              <input id="walk" type="checkbox" name="hobby" value="mung" />
-              <label for="walk">산책</label>
-            </div><br />
-            <label for="major">전공</label>
-            <select name="major" id="major">
-              <option value="CS">Computer Science</option>
-              <option value="AI" selected>AI</option>
-              <option id="DS" value="DS">Design</option>
-              <option id="ET" value="ET">ETCs</option>
-            </select><br />
-            <label for="desc">하고싶은 말</label><br />
-            <textarea name="desc" id="desc" cols="30" rows="5">
-이러한 사연이 있어서 2조에 들어가고 싶습니다.
-            </textarea>
+      <!-- 오른쪽: 가입 폼 -->
+      <div class="col-md-6">
+        <div class="card shadow p-4">
+          <h5 class="card-title text-center fw-bold">가입 신청</h5>
+          <form id="registerForm">
+            <div class="mb-3">
+              <label for="userName" class="form-label">이름</label>
+              <input type="text" class="form-control" id="userName" placeholder="gildong Hong">
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">전화번호</label>
+              <input type="text" class="form-control" id="phone" placeholder="010-0000-0000">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">성별</label>
+              <div class="d-flex">
+                <div class="form-check me-3">
+                  <input class="form-check-input" type="radio" name="gender" id="male" value="M">
+                  <label class="form-check-label" for="male">남</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="female" value="F">
+                  <label class="form-check-label" for="female">여</label>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="major" class="form-label">전공</label>
+              <select class="form-select" id="major">
+                <option selected>전공을 선택해주세요</option>
+                <option value="CS">Computer Science</option>
+                <option value="AI">AI</option>
+                <option value="DS">Design</option>
+                <option value="ET">ETCs</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="desc" class="form-label">하고 싶은 말</label>
+              <textarea class="form-control" id="desc" rows="3" placeholder="ex) 이러한 이유로 2조에 가입하고 싶습니다."></textarea>
+            </div>
+            <button type="button" id="btnRegister" class="btn btn-dark w-100">가입하기</button>
           </form>
-          <br />
-          <input id="btnRegister" type="button" value="가입하기" />
         </div>
       </div>
     </div>
-    <script>
-      // 이미 문서의 마지막에 script를 넣고 있지만, 조금 더 안전한 (dom 문서의 처리가 완료된 후 실행) 방법
-      // callback 함수
-      window.onload = function () {
-        document
-          .getElementById("phone")
-          .addEventListener("input", function (event) {
-            let value = event.target.value.replace(/[^0-9]/g, ""); // 숫자만 남기기
-            if (value.length > 3 && value.length <= 7) {
-              value = value.replace(/(\d{3})(\d{1,4})/, "$1-$2");
-            } else if (value.length > 7) {
-              value = value.replace(/(\d{3})(\d{4})(\d{1,4})/, "$1-$2-$3");
-            }
-            event.target.value = value;
-          });
-        // register
-        document.querySelector("#btnRegister").onclick = function () {
-          console.log(document.querySelector("#userId").value);
-          console.log(document.querySelector("#password").value);
-          console.log(document.querySelector("#userName").value);
-          console.log(document.querySelector("#phone").value);
+  </div>
 
-          let userName = document.querySelector("#userName").value.trim();
-          let phone = document.querySelector("#phone").value.trim();
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("phone").addEventListener("input", function (event) {
+        let value = event.target.value.replace(/[^0-9]/g, "");
+        if (value.length > 3 && value.length <= 7) {
+          value = value.replace(/(\d{3})(\d{1,4})/, "$1-$2");
+        } else if (value.length > 7) {
+          value = value.replace(/(\d{3})(\d{4})(\d{1,4})/, "$1-$2-$3");
+        }
+        event.target.value = value;
+      });
 
-          if (!userName || !phone) {
-            alert("이름과 전화번호를 입력해주세요!");
-            return;
-          }
+      document.getElementById("btnRegister").addEventListener("click", function () {
+        let userName = document.getElementById("userName").value.trim();
+        let phone = document.getElementById("phone").value.trim();
+        if (!userName || !phone) {
+          alert("이름과 전화번호를 입력해주세요!");
+          return;
+        }
 
-          // 조원 목록 추가 기능
-          let table = document.querySelector("table");
-          let newRow = table.insertRow(-1); // 마지막에 추가
-          let nameCell = newRow.insertCell(0);
-          let roleCell = newRow.insertCell(1);
+        let table = document.querySelector(".table tbody");
+        let newRow = table.insertRow();
+        newRow.innerHTML = `<td>${userName}</td><td>조원</td>`;
 
-          nameCell.textContent = userName;
-          roleCell.textContent = "조원"; // 기본 역할
-
-          document.querySelector("#userName").value = "";
-          document.querySelector("#phone").value = "";
-
-          // radio
-          console.log(
-            document.querySelector("input[name='gender']:checked").value
-          );
-
-          // checkbox (0 ~ 여러개)
-          document
-            .querySelectorAll("input[name='hobby']:checked")
-            .forEach((el) => console.log(el.value));
-
-          // select
-          console.log(document.querySelector("#major option:checked").value);
-
-          // textarea
-          console.log(document.querySelector("#desc").value);
-        };
-      };
-    </script>
-        <script src="/eureka-team-intro/gototeam.js"></script>
-  </body>
+        document.getElementById("registerForm").reset();
+      });
+    });
+  </script>
+</body>
 </html>
