@@ -15,7 +15,7 @@
     button.style.width = '80px';
     button.style.height = '80px';
     button.style.borderRadius = '50%';
-    button.style.backgroundColor = '#3498db';
+    button.style.backgroundColor = '#000000';
     button.style.color = 'white';
     button.style.border = 'none';
     button.style.fontSize = '14px';
@@ -28,7 +28,7 @@
       this.style.backgroundColor = '#2980b9';
     };
     button.onmouseout = function() {
-      this.style.backgroundColor = '#3498db';
+      this.style.backgroundColor = '#000000';
     };
     
 
