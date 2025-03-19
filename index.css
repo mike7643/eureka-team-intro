@@ -143,6 +143,7 @@ main h1 {
     font-size: 14px;
     font-weight: bold;
 }
+
 .container{
     width: auto !important;
     max-width: calc(100% - 100px) !important;
